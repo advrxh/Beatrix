@@ -20,7 +20,7 @@ TODO:
     - Just use the cli
 - Search Duck Duck Go ✅
     - this is waste, but, keep it there.
-- Shutdown && Sleep
+- Shutdown && Sleep ✅
     - Yes, much necessary.
 - Opening websites ( with fraud detection )
     - Fraud detection can wait.

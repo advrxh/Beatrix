@@ -58,4 +58,8 @@ bot.register_message_handler(handle_zoom_links, func=parse_for("zoom"))
 ## duck bundle
 bot.register_message_handler(duck_it, func=parse_for(["duck", "duckduckgo"]))
 
+## power bundle
+bot.register_message_handler(handle_shutdown, func=parse_for(["shut", "shutdown"]))
+bot.register_message_handler(handle_sleep, func=parse_for(["sleep", "snooze"]))
+
 asyncio.run(bot.polling())
