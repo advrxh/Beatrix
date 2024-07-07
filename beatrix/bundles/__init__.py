@@ -7,3 +7,4 @@ from beatrix.bundles.zoom import *
 from beatrix.bundles.duckduckgo import *
 from beatrix.bundles.power import *
 from beatrix.bundles.browser import *
+from beatrix.bundles.volume import *

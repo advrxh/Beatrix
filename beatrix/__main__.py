@@ -67,4 +67,7 @@ bot.register_message_handler(
     handle_links, func=parse_for(["http://", "https://"], is_link=True)
 )
 
+## volume bundle
+bot.register_message_handler(handle_volume, func=parse_for("vol"))
+
 asyncio.run(bot.polling())

@@ -24,7 +24,7 @@ TODO:
     - Yes, much necessary.
 - Opening websites ( with fraud detection ) ✅
     - Fraud detection can wait.
-- Control volume
+- Control volume ✅
     - Yup, need.
 - Torrent management
     - use the qbit client for python.
