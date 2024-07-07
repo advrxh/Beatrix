@@ -64,12 +64,12 @@ def parse_for(keys: List[str] | str, case_sensitive: bool = False):
 
         if isinstance(keys, str):
             if case_sensitive:
-                if message.text.startswith(keys):
+                if message.text.startswith(keys + " "):
                     return True
                 else:
                     return False
             else:
-                if message.text.lower().startswith(keys):
+                if message.text.lower().startswith(keys + " "):
                     return True
                 else:
                     return False
@@ -77,10 +77,10 @@ def parse_for(keys: List[str] | str, case_sensitive: bool = False):
         if isinstance(keys, list):
             for key in keys:
                 if case_sensitive:
-                    if message.text.startswith(key):
+                    if message.text.startswith(key + " "):
                         return True
                 else:
-                    if message.text.lower().startswith(key):
+                    if message.text.lower().startswith(key + " "):
                         return True
 
         return False
