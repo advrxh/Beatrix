@@ -18,7 +18,7 @@ TODO:
     - Create them
 - Zoom ✅
     - Just use the cli
-- Search Duck Duck Go
+- Search Duck Duck Go ✅
     - this is waste, but, keep it there.
 - Shutdown && Sleep
     - Yes, much necessary.
