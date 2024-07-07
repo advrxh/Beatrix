@@ -1,4 +1,3 @@
-from beatrix.constants import Beatrix
 from beatrix.bot import bot
 
 from webbrowser import open
