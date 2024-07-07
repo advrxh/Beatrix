@@ -55,4 +55,7 @@ bot.register_message_handler(
 ## zoom bundle
 bot.register_message_handler(handle_zoom_links, func=parse_for("zoom"))
 
+## duck bundle
+bot.register_message_handler(duck_it, func=parse_for(["duck", "duckduckgo"]))
+
 asyncio.run(bot.polling())
