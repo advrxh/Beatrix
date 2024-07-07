@@ -22,7 +22,7 @@ TODO:
     - this is waste, but, keep it there.
 - Shutdown && Sleep ✅
     - Yes, much necessary.
-- Opening websites ( with fraud detection )
+- Opening websites ( with fraud detection ) ✅
     - Fraud detection can wait.
 - Control volume
     - Yup, need.

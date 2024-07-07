@@ -62,4 +62,9 @@ bot.register_message_handler(duck_it, func=parse_for(["duck", "duckduckgo"]))
 bot.register_message_handler(handle_shutdown, func=parse_for(["shut", "shutdown"]))
 bot.register_message_handler(handle_sleep, func=parse_for(["sleep", "snooze"]))
 
+## broswer bundle
+bot.register_message_handler(
+    handle_links, func=parse_for(["http://", "https://"], is_link=True)
+)
+
 asyncio.run(bot.polling())
