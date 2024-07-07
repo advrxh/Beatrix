@@ -6,3 +6,4 @@ class Beatrix:
     admin_id = os.getenv("ADMIN")
     downloads_dir = os.getenv("DOWNLOADS")
     binge_box_dir = os.getenv("BINGE_BOX")
+    cache_dir = os.getenv("CACHE")

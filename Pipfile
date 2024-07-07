@@ -9,6 +9,8 @@ aiohttp = "*"
 python-qbittorrent = "*"
 pywin32 = "*"
 pyautogui = "*"
+opencv-python = "*"
+keyboard = "*"
 
 [dev-packages]
 

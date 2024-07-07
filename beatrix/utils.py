@@ -1,9 +1,24 @@
 from beatrix.constants import Beatrix
+
 from telebot.types import Message
+import cv2
+import pyautogui
 
 from typing import List
 from pathlib import Path
 import difflib
+
+
+def camera_capture():
+    cap = cv2.VideoCapture(0)
+    _, frame = cap.read()
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    cv2.imwrite(Beatrix.downloads_dir + "capture.png", rgb)
+    cap.release()
+
+
+def screen_capture(all_screens: bool = False):
+    pyautogui.screenshot(Beatrix.cache_dir + "scap.png", allScreens=all_screens)
 
 
 def get_closest_match(input_str, possibilities):
