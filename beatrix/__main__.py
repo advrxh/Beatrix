@@ -47,10 +47,12 @@ bot.register_message_handler(
 )
 
 ## gmeet bundle
-
 bot.register_message_handler(
     lambda message: gmeet_link_handler(message, code=True),
     func=parse_for(["meet", "gmeet"]),
 )
+
+## zoom bundle
+bot.register_message_handler(handle_zoom_links, func=parse_for("zoom"))
 
 asyncio.run(bot.polling())

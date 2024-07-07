@@ -16,7 +16,7 @@ TODO:
 - Google Meet ( with ability to create new meetings ) ✅
     - Open gmeets
     - Create them
-- Zoom
+- Zoom ✅
     - Just use the cli
 - Search Duck Duck Go
     - this is waste, but, keep it there.

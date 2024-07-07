@@ -7,3 +7,4 @@ class Beatrix:
     downloads_dir = os.getenv("DOWNLOADS")
     binge_box_dir = os.getenv("BINGE_BOX")
     cache_dir = os.getenv("CACHE")
+    zoom_executable = os.getenv("ZOOM")
