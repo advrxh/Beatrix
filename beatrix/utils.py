@@ -58,18 +58,20 @@ def get_file_list(cdir=Beatrix.downloads_dir):
     return files
 
 
-def parse_for(keys: List[str] | str, case_sensitive: bool = False):
+def parse_for(
+    keys: List[str] | str, case_sensitive: bool = False, is_link: bool = False
+):
 
     def callback(message: Message):
 
         if isinstance(keys, str):
             if case_sensitive:
-                if message.text.startswith(keys + " "):
+                if message.text.startswith(keys + (" " if not is_link else "")):
                     return True
                 else:
                     return False
             else:
-                if message.text.lower().startswith(keys + " "):
+                if message.text.lower().startswith(keys + (" " if not is_link else "")):
                     return True
                 else:
                     return False
@@ -77,10 +79,12 @@ def parse_for(keys: List[str] | str, case_sensitive: bool = False):
         if isinstance(keys, list):
             for key in keys:
                 if case_sensitive:
-                    if message.text.startswith(key + " "):
+                    if message.text.startswith(key + (" " if not is_link else "")):
                         return True
                 else:
-                    if message.text.lower().startswith(key + " "):
+                    if message.text.lower().startswith(
+                        key + (" " if not is_link else "")
+                    ):
                         return True
 
         return False
