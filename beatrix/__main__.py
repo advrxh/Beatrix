@@ -27,13 +27,23 @@ bot.register_message_handler(
 bot.register_message_handler(
     lambda message: stroke_kbb(message, all_screens=False), func=parse_for(["kbb"])
 )
-
-
 bot.register_message_handler(
     lambda message: stroke_kbt(message, all_screens=True), func=parse_for(["akbt"])
 )
 bot.register_message_handler(
     lambda message: stroke_kbb(message, all_screens=True), func=parse_for(["akbb"])
+)
+
+## camera and screen capture bundle
+bot.register_message_handler(
+    camera_capture_handler, func=parse_for(["cam", "pic", "cap", "camera", "photo"])
+)
+bot.register_message_handler(
+    screen_capture_handler, func=parse_for(["scap", "spic", "screenshot"])
+)
+bot.register_message_handler(
+    lambda message: screen_capture_handler(message, all_screens=True),
+    func=parse_for(["ascap", "aspic", "ascreenshot"]),
 )
 
 asyncio.run(bot.polling())

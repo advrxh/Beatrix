@@ -9,11 +9,10 @@ from pathlib import Path
 import difflib
 
 
-def camera_capture():
-    cap = cv2.VideoCapture(0)
+def camera_capture(camera_index: int = 0):
+    cap = cv2.VideoCapture(camera_index)
     _, frame = cap.read()
-    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    cv2.imwrite(Beatrix.downloads_dir + "capture.png", rgb)
+    cv2.imwrite(Beatrix.cache_dir + "cam.png", frame)
     cap.release()
 
 
