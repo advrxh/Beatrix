@@ -35,17 +35,12 @@ def format_torrent_deets(torrent):
             eta = torrent["eta"]
 
             if eta != 8640000:
-                hours = round(eta / 3600, 2)
                 eta %= 3600
                 minutes = round(eta / 60, 2)
-                eta %= 60
-                seconds = eta
             else:
-                hours = minutes = seconds = 0
+                minutes = 0
 
-            formatted_message += (
-                f"\n*{header.title()}:* ``` {hours} h {minutes} m {seconds} s```"
-            )
+            formatted_message += f"\n*{header.title()}:* ``` {minutes} m```"
             continue
 
         if header in ["size", "downloaded", "amount_left"]:
