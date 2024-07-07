@@ -26,5 +26,5 @@ TODO:
     - Fraud detection can wait.
 - Control volume ✅
     - Yup, need.
-- Torrent management
+- Torrent management ✅
     - use the qbit client for python.
