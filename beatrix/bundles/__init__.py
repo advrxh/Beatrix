@@ -8,3 +8,4 @@ from beatrix.bundles.duckduckgo import *
 from beatrix.bundles.power import *
 from beatrix.bundles.browser import *
 from beatrix.bundles.volume import *
+from beatrix.bundles.torrent import *

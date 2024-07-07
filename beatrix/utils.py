@@ -7,6 +7,25 @@ import pyautogui
 from typing import List
 from pathlib import Path
 import difflib
+import urllib.parse
+
+
+def extract_torrent_name(magnet_link):
+    start_index = magnet_link.find("dn=")
+    if start_index == -1:
+        return None
+
+    start_index += 3  # Move past "dn="
+    end_index = magnet_link.find("&", start_index)
+    if end_index == -1:
+        return urllib.parse.unquote(magnet_link[start_index:])
+
+    return urllib.parse.unquote(magnet_link[start_index:end_index])
+
+
+def create_progress_bars(progress):
+    completed = round(25 * progress)
+    return completed * "=" + (25 - completed) * "."
 
 
 def camera_capture(camera_index: int = 0):
@@ -59,19 +78,19 @@ def get_file_list(cdir=Beatrix.downloads_dir):
 
 
 def parse_for(
-    keys: List[str] | str, case_sensitive: bool = False, is_link: bool = False
+    keys: List[str] | str, case_sensitive: bool = False, whitespace: bool = True
 ):
 
     def callback(message: Message):
 
         if isinstance(keys, str):
             if case_sensitive:
-                if message.text.startswith(keys + (" " if not is_link else "")):
+                if message.text.startswith(keys + (" " if whitespace else "")):
                     return True
                 else:
                     return False
             else:
-                if message.text.lower().startswith(keys + (" " if not is_link else "")):
+                if message.text.lower().startswith(keys + (" " if whitespace else "")):
                     return True
                 else:
                     return False
@@ -79,11 +98,11 @@ def parse_for(
         if isinstance(keys, list):
             for key in keys:
                 if case_sensitive:
-                    if message.text.startswith(key + (" " if not is_link else "")):
+                    if message.text.startswith(key + (" " if whitespace else "")):
                         return True
                 else:
                     if message.text.lower().startswith(
-                        key + (" " if not is_link else "")
+                        key + (" " if whitespace else "")
                     ):
                         return True
 

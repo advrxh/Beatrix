@@ -8,3 +8,4 @@ class Beatrix:
     binge_box_dir = os.getenv("BINGE_BOX")
     cache_dir = os.getenv("CACHE")
     zoom_executable = os.getenv("ZOOM")
+    qbit_port = int(os.getenv("QBITPORT"))
