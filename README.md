@@ -1,6 +1,6 @@
 Beatrix. 
 
-A local bot running on your windows system to help me quick.
+A general purpose telegram bot for controlling and managing your pc.
 
 TODO:
 - Downloading and Retrieving Files ✅
