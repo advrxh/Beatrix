@@ -46,4 +46,11 @@ bot.register_message_handler(
     func=parse_for(["ascap", "aspic", "ascreenshot"]),
 )
 
+## gmeet bundle
+
+bot.register_message_handler(
+    lambda message: gmeet_link_handler(message, code=True),
+    func=parse_for(["meet", "gmeet"]),
+)
+
 asyncio.run(bot.polling())

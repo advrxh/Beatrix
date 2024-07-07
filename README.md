@@ -13,7 +13,7 @@ TODO:
 - Screenshots + Camera ✅
     - I think camera can wait, tbh.
     - Screenshots, yes.
-- Google Meet ( with ability to create new meetings )
+- Google Meet ( with ability to create new meetings ) ✅
     - Open gmeets
     - Create them
 - Zoom
