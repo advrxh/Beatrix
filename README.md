@@ -8,7 +8,7 @@ TODO:
     - Manage all types of files
     - Use pattern matching to retrieve files quickly
     - Add delete option
-- Keystrokes
+- Keystrokes (📍)
     - implement the same old features
 - Screenshots + Camera
     - I think camera can wait, tbh.
