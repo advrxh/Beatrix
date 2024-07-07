@@ -87,7 +87,7 @@ async def download_torrent(message: Message, series: bool = False):
     )
 
     while info.get("state", None) != "pausedUP":
-        time.sleep(2)
+        time.sleep(10)
         info = qb.torrents(sort="added_on", reverse=True)[0]
         await bot.edit_message_text(
             format_torrent_deets(info),
