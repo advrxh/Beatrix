@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytelegrambotapi = "*"
+aiohttp = "*"
+python-qbittorrent = "*"
+pywin32 = "*"
+pyautogui = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+serve = "python -m beatrix"
