@@ -1,5 +1,9 @@
 import asyncio
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from beatrix.bundles import *
 from beatrix.utils import *
 from beatrix.bot import bot
@@ -105,6 +109,7 @@ if BeatrixState.qb:
 
 
 async def main():
+    load_dotenv()
     await bot.send_message(Beatrix.admin_id, "I'm up and running!")
     await bot.infinity_polling()
 

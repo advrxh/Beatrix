@@ -11,6 +11,7 @@ pywin32 = "*"
 pyautogui = "*"
 opencv-python = "*"
 keyboard = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
