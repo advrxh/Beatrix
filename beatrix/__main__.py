@@ -3,6 +3,7 @@ import asyncio
 from beatrix.bundles import *
 from beatrix.utils import *
 from beatrix.bot import bot
+from beatrix.state import Beatrix as BeatrixState
 
 
 # register handlers
@@ -80,25 +81,26 @@ bot.register_message_handler(
 bot.register_message_handler(handle_volume, func=parse_for("vol"))
 
 ## torrent bundle
-bot.register_message_handler(
-    list_torrents,
-    func=parse_for(["all torrents", "list tor", "all tor"], whitespace=False),
-)
 
-bot.register_message_handler(
-    lambda message: list_torrents(message, filter="downloading"),
-    func=parse_for(["downloads", "list downloads", "dall tor"], whitespace=False),
-)
+if BeatrixState.qb:
+    bot.register_message_handler(
+        list_torrents,
+        func=parse_for(["all torrents", "list tor", "all tor"], whitespace=False),
+    )
 
-bot.register_message_handler(
-    download_torrent, func=parse_for(["dwld", "tor", "torrent"])
-)
+    bot.register_message_handler(
+        lambda message: list_torrents(message, filter="downloading"),
+        func=parse_for(["downloads", "list downloads", "dall tor"], whitespace=False),
+    )
 
+    bot.register_message_handler(
+        download_torrent, func=parse_for(["dwld", "tor", "torrent"])
+    )
 
-bot.register_message_handler(
-    lambda message: download_torrent(message, series=True),
-    func=parse_for(["sdwld", "stor", "storrent"]),
-)
+    bot.register_message_handler(
+        lambda message: download_torrent(message, series=True),
+        func=parse_for(["sdwld", "stor", "storrent"]),
+    )
 
 
 asyncio.run(bot.polling())

@@ -1,13 +1,11 @@
 from beatrix.constants import Beatrix
-from beatrix.bot import bot
+from beatrix.bot import bot, qb
 from beatrix.utils import create_progress_bars, extract_torrent_name
 
 import time
 
 from telebot.types import Message
 from qbittorrent import Client
-
-qb = Client(f"http://127.0.0.1:{Beatrix.qbit_port}")
 
 
 info_headers = [
