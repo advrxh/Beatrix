@@ -4,6 +4,7 @@ from beatrix.bundles import *
 from beatrix.utils import *
 from beatrix.bot import bot
 from beatrix.state import Beatrix as BeatrixState
+from beatrix.constants import Beatrix
 
 
 # register handlers
@@ -103,4 +104,10 @@ if BeatrixState.qb:
     )
 
 
-asyncio.run(bot.polling())
+async def main():
+    await bot.send_message(Beatrix.admin_id, "I'm up and running!")
+    await bot.infinity_polling()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
