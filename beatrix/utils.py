@@ -83,6 +83,9 @@ def parse_for(
 
     def callback(message: Message):
 
+        if message.from_user.id != int(Beatrix.admin_id):
+            return False
+
         if isinstance(keys, str):
             if case_sensitive:
                 if message.text.startswith(keys + (" " if whitespace else "")):
@@ -95,7 +98,7 @@ def parse_for(
                 else:
                     return False
 
-        if isinstance(keys, list):
+        elif isinstance(keys, list):
             for key in keys:
                 if case_sensitive:
                     if message.text.startswith(key + (" " if whitespace else "")):
@@ -105,7 +108,6 @@ def parse_for(
                         key + (" " if whitespace else "")
                     ):
                         return True
-
         return False
 
     return callback
